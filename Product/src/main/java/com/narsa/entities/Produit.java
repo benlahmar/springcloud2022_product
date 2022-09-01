@@ -9,6 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "product")
 public class Produit {
@@ -21,6 +24,8 @@ public class Produit {
 	String description;
 	double prix;
 	int quantite;
+	
+	@JsonBackReference
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	Categorie categorie;
 	

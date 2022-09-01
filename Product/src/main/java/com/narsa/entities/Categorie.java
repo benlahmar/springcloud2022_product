@@ -11,6 +11,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity
 public class Categorie {
 
@@ -19,6 +21,7 @@ public class Categorie {
 	long id;
 	String libelle;
 	
+	@JsonManagedReference
 	@OneToMany(mappedBy = "categorie",
 			fetch = FetchType.EAGER,
 			cascade = CascadeType.ALL

@@ -8,4 +8,5 @@ import com.narsa.entities.Produit;
 public interface CategorieRepository 
 		extends JpaRepository<Categorie, Long>{
 
+	Categorie findByLibelle(String lib);
 }
