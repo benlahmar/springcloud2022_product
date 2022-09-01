@@ -25,6 +25,7 @@ public class Produit {
 	double prix;
 	int quantite;
 	
+	//@JsonIgnore
 	@JsonBackReference
 	@ManyToOne(cascade = CascadeType.REMOVE)
 	Categorie categorie;
